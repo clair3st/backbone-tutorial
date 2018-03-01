@@ -9,7 +9,7 @@
   <!-- ========= -->
   <!-- Your HTML -->
   <!-- ========= -->
-
+  <div id="container">Loading...</div>
   <!-- ========= -->
   <!-- Libraries -->
   <!-- ========= -->
@@ -23,6 +23,17 @@
   <!-- =============== -->
   <script type="text/javascript">
     // your JS code goes here
+    var AppView = Backbone.View.extend({
+      el: '#container', // el - this is the element the view is associated with and where the data will be rendered.
+      initialize: function() {
+        // called when the view is instantiated
+        this.render();
+      },
+      render: function() {
+        this.$el.html("Hello World"); // $el is a cached jQuery object, can use jquery to push content
+      }
+    }); 
+    var appView = new AppView();
   </script>
   
 </body>
